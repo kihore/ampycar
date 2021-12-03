@@ -11,19 +11,24 @@ export default function LandingPage() {
     }
 
     return (
-        <div className="langindpage-conatainer">
-            <Dropdown
-            data={[
-                {value: 1, label: 'India'},
-                {value: 2, label: 'USA'},
-                {value: 3, label: 'UK'},
-                {value: 4, label: 'Germany'},
-                {value: 5, label: 'Russia'},
-                {value: 5, label: 'Italy'},
-            ]}
-            onChange={ddselect}
-            />
-            <InputField/>
+        <div className="container-md">
+        Select Car locations    
+        <div className='container-input-placeholder'> 
+        <input type="number" 
+        className="input-rate" />
+        <select 
+        className='dropdown-list'>
+        </select>
+      
+        </div>
+        <div className='container-input-placeholder'> 
+        <input type="number" 
+        className="input-rate" />
+        <select 
+        className='dropdown-list'>
+        </select>
+      
+        </div>
         </div>
     )
 }
