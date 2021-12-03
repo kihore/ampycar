@@ -1,3 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+
+body{
+  font-family: 'Poppins';
+}
+
 .main{
     display: flex;
     text-align: center;
@@ -42,21 +48,34 @@
     border-radius: 120px ;
   }
   .useremail,.password{
-    height:25px;
-    width: 200px;
-    padding: 5px;
+    height: 25px;
+    width: 321px;
+    padding: 9px;
     align-items: center;
     display: flex;
     margin-top: 20px;
+    border-radius: 15px;
+    border: 1px solid aliceblue;
   }
    
   button{
-    align-items: center;
-    height: 30px;
-    width: 80px;
-    margin: 20px;
+    height: 40px;
+    width: 125px;
+    margin: 28px;
     justify-content: center;
     background-color: rgb(31, 25, 25);
     color: aliceblue;
     font-weight: bold;
+    border: 1px solid #0563b4;
+    border-radius: 16px;
+    font-size: 15px;
+  }
+
+  .login-title{
+    
+  }
+
+  .signup-query-title{
+    font-size: 15px;
+    text-align: left;
   }

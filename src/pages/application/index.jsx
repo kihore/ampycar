@@ -5,23 +5,24 @@ import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
 
 import SignIn from './auth/signin';
 import Signup from './auth/signup';
+import LandingPage from './landingpage/LandingPage';
 
 
-const ApplicationRoute = ({
-    component:Component,
-    layout:Layout,
-    ...rest  })=>{
-    return (
-        <Route
-          {...rest}
-          render={(props) => (
-            <Layout>
-              <Component />
-            </Layout>
-          )}
-        />
-      );
-}
+// const ApplicationRoute = ({
+//     component:Component,
+//     layout:Layout,
+//     ...rest  })=>{
+//     return (
+//         <Route
+//           {...rest}
+//           render={(props) => (
+//             <Layout>
+//               <Component />
+//             </Layout>
+//           )}
+//         />
+//       );
+// }
 
 export default function ApplicationPage() {
     return (
@@ -38,8 +39,8 @@ export default function ApplicationPage() {
           element={<Signup />} 
           />
           <Route 
-          path='/' 
-          // element={<Transaction />} 
+          path='/home' 
+          element={<LandingPage/>} 
           />
         </Routes>
       </div>

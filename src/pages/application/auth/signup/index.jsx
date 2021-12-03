@@ -5,7 +5,7 @@ import "./signup.css"
 export default function Signup() {
     function handlechange(){
         
-        axios.post("http://localhost:9000",{
+        axios.post("http://localhost:5000/signup",{
         Name:document.getElementsByName("Name").value,
         Email:document.getElementsByName("Email").value,
         Password:document.getElementsByName("Password").value,

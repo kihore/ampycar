@@ -18,11 +18,10 @@ export default function Signin() {
    
           return(
               <div>
-              <div className="header" ><b>Ampy Cars</b> </div>
               <div className="main">
               <div className="sub-main">
                   <div>
-                      <div> <b>Login</b> </div>
+                      <div className="login-title"> Login </div>
                       <input 
                       type="text" 
                       id="usermail" 
@@ -37,6 +36,10 @@ export default function Signin() {
                       placeholder="Password" 
                       className="password" required 
                       />
+                      <div className="signup-query-title"> 
+                          Don't have an account?
+                          <a className="">SignUp</a>
+                      </div>
                       <button 
                       onClick={handleSubmit} 
                       type="submit" 
