@@ -1,9 +1,10 @@
 import React from 'react'
 import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
 
-import AuthenticationLayout from "layouts/authentication/AuthenticationLayout";
-import SignIn from "pages/application/auth/signin";
+// import AuthenticationLayout from '../../Layouts/authentication/AuthenticationLayout';
 
+import SignIn from './auth/signin';
+import Signup from './auth/signup';
 
 
 const ApplicationRoute = ({
@@ -26,13 +27,22 @@ export default function ApplicationPage() {
     return (
        <>
        <Router>
-           <Routes>
-           <ApplicationRoute
-            path="/signin"
-            component={SignIn}
-            layout={AuthenticationLayout}
+          <div>
+        <Routes>
+          <Route 
+          path='/signin' 
+          element={<SignIn />} 
           />
-           </Routes>
+          <Route 
+          path='/signup' 
+          element={<Signup />} 
+          />
+          <Route 
+          path='/' 
+          // element={<Transaction />} 
+          />
+        </Routes>
+      </div>
        </Router>
        </>
     )
