@@ -6,11 +6,16 @@ import {
     FETCHING_USER_PROFILE_SUCCEEDED,
     FETCHING_USER_PROFILE_FAILED,
     UPDATING_USER_PROFILE,
-    FETCHING_USER_PROFILE_SUCCEEDED,
-    FETCHING_USER_PROFILE_FAILED,
-    
-} from '../constants/actiontypes'
+    ACCOUNT_BASE_URL,
+    PROFILE_URL,
+    UPDATING_USER_PROFILE_SUCCEEDED,
+    UPDATING_USER_PROFILE_FAILED,
+    UPDATE_PROFILE_URL
 
+} from '../constants/actiontypes'
+import axios from "axios";
+import { createAction } from "redux-actions";
+import { call, put, takeLatest } from "redux-saga/effects";
 /**
  * User Account
  */
