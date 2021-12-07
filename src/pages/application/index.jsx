@@ -7,21 +7,21 @@ import SignIn from './auth/signin';
 import Signup from './auth/signup';
 
 
-const ApplicationRoute = ({
-    component:Component,
-    layout:Layout,
-    ...rest  })=>{
-    return (
-        <Route
-          {...rest}
-          render={(props) => (
-            <Layout>
-              <Component />
-            </Layout>
-          )}
-        />
-      );
-}
+// const ApplicationRoute = ({
+//     component:Component,
+//     layout:Layout,
+//     ...rest  })=>{
+//     return (
+//         <Route
+//           {...rest}
+//           render={(props) => (
+//             <Layout>
+//               <Component />
+//             </Layout>
+//           )}
+//         />
+//       );
+// }
 
 export default function ApplicationPage() {
     return (
