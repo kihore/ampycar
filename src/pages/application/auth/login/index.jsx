@@ -20,7 +20,7 @@ export default function Login() {
       console.log("user account is detected",resp.data);
       document.getElementById("user_email").value="";
       document.getElementById("password").value="";
-        navigate('/');
+        navigate('/summary');
     }
 
       })

@@ -2,6 +2,7 @@
 import React from 'react';
 import "./summary.css";
 
+
 const ride = {
     cartitle:"Car type :  Maruti swift",
     cartype:"Geartype : Manual",

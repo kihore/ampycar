@@ -1,5 +1,8 @@
 import React ,{useState, useEffect} from 'react';
 import axios from 'axios';
+import 'bootstrap/dist/css/bootstrap.min.css'
+import { Button, Card} from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 export default function CarInventory() {
     
@@ -18,14 +21,18 @@ export default function CarInventory() {
    
     const getcardata = async()=>{
     try{
-      const data = await axios.get("http://localhost:7051/api/carlist");
+      const data = await axios.get("http://localhost:5001/api/carlist");
   
         setcar(data.data);
+        console.log(data.data)
         }catch(e){
             console.log(e);
         }
     };
   
+    const bookingConfirm = async(id) =>{
+         export default id;
+    }
   
     useEffect(()=>{
         getcardata();
@@ -33,8 +40,9 @@ export default function CarInventory() {
     return(
       
   <div>
+    <div class="card-columns">
   <h1 class="card-title">select your car</h1>
-  <div class="card-columns">
+  
      
        {car.map((item)=>{
           return(   
@@ -56,7 +64,9 @@ export default function CarInventory() {
             { logged && (
                     <>
                     <Link to='/signup'>
-                    <Button  key= {item.id} variant="primary">Book</Button>
+                    <Button  key= {item.id} variant="primary"
+                    //  onClick={bookingConfirm(item.id)}
+                    >Book</Button>
                     </Link>
         
                     </>
