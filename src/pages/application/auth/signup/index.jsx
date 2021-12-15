@@ -4,58 +4,77 @@ import "./signup.css"
 
 export default function Signup() {
     function handlechange(){
-        
-        axios.post("http://localhost:9000",{
-        Name:document.getElementsByName("Name").value,
-        Email:document.getElementsByName("Email").value,
-        Password:document.getElementsByName("Password").value,
-        Confirm_password:document.getElementsByName("Confirm_password").value,
-
+        const password = document.getElementById("password");
+        const conformpassword = document.getElementById("confirmPassword");
+        //const email =document.getElementById("email");
+       // Validation(email);
+        if(password.value===conformpassword.value)
+        {
+        axios.post("http://localhost:5001/addvalue",{
+        name:document.getElementById("name").value,
+        email:document.getElementById("email").value,
+        password:document.getElementById("password").value,
+        phoneNo:document.getElementById("phoneNo").value
     })
     .then(resp=>{
         console.log(resp.data);
-        document.getElementsByName("Name").value="";
-        document.getElementsByName("Email").value="";
-        document.getElementsByName("Password").value="";
-        document.getElementsByName("Confirm_password").value="";
+       document.getElementsByName("name").value="";
+        document.getElementsByName("email").value="";
+        document.getElementsByName("password").value="";
+        document.getElementsByName("phoneNo").value="";
 })
 .catch(function(err){
     console.log("error");
 })
     }
 
+ if(password.value!==conformpassword.value){
+    alert("Password Mismatched");
+}       console.log("Password Matched");
+    }
+   
+    
     return (
-        <div className='container'>
-            <form>
+        <div className="main">
+        <div className='signupContainer'>
+            <form onSubmit={handlechange}>
             <h2>Sign Up</h2>
-            
+
                 <div className = 'field'>
-                    <label>Username</label>
-                    <input type= 'text' name= 'Name' placeholder= 'Enter the user name'
+                <label>Username</label>
+                <div>
+                    <input type= 'text' id="name" name= 'name' placeholder= 'Enter User_name'
                      required 
-                     pattern= '^[a-zA-Z0-9_]{5,}[a-zA-Z]+[0-9]*$'/>
+                     pattern= '^[a-zA-Z0-9_]{5,}[a-zA-Z]+[0-9]*$'
+                     />
                 </div>
-                
-                <div className = 'field'>
+                <div>
                     <label>Email</label>
-                    <input type= 'text' name= 'Email' placeholder= 'Enter the email-id' 
-                    required/>
+                    <input type= 'email' id="email" name= 'email' placeholder= 'Enter Email-Id' required
+                     pattern='^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$' 
+                    />
                 </div>
-               
-                <div className = 'field'>
-                    <label>password</label>
-                    <input type= 'password' name= 'Password' placeholder= 'Enter the password' 
+                <div>
+                    <label>Phone Number</label>
+                    <input type="tel" id="phoneNo" name= 'phoneNo' placeholder= 'Mobile Number - xxxxx xxxxx' required pattern="[5-9]{1}[0-9]{9}"  />
+                </div>
+                <div>
+                    <label>Password</label>
+                    <input type= 'password' id="password" name= 'password' placeholder= 'Enter Password' 
+                    required 
+                    pattern="[A-Z]{1}[a-z]{6}[0-9]{2}"
+                     />
+                </div>
+                <div>
+                    <label>Conform Password</label>
+                    <input type= 'password' id="confirmPassword" name= 'confirmPassword' placeholder= 'Enter Confirm Password' 
                     required
                      />
                 </div>
-                
-                <div className = 'field'>
-                    <label>confirm password</label>
-                    <input type= 'password' name= 'Confirm_password' placeholder= 'confirm password' required />
                 </div>
-                <button onClick={handlechange} type="button">Sign Up</button>
-            
+                <button type="submit">Sign Up</button>
             </form>
+        </div>
         </div>
     )
 }

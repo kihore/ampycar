@@ -1,48 +1,31 @@
 import React from 'react'
 import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
-
-// import AuthenticationLayout from '../../Layouts/authentication/AuthenticationLayout';
-
-import SignIn from './auth/signin';
+import Navbar from '../../components/features/navbar/Navbar';
+import Login from './auth/login';
 import Signup from './auth/signup';
-
-
-// const ApplicationRoute = ({
-//     component:Component,
-//     layout:Layout,
-//     ...rest  })=>{
-//     return (
-//         <Route
-//           {...rest}
-//           render={(props) => (
-//             <Layout>
-//               <Component />
-//             </Layout>
-//           )}
-//         />
-//       );
-// }
+import Landing from './landing/Landing';
 
 export default function ApplicationPage() {
     return (
        <>
        <Router>
+         <Navbar/>
           <div>
-        <Routes>
-          <Route 
-          path='/signin' 
-          element={<SignIn />} 
-          />
-          <Route 
-          path='/signup' 
-          element={<Signup />} 
-          />
-          <Route 
-          path='/' 
-          // element={<Transaction />} 
-          />
-        </Routes>
-      </div>
+            <Routes>
+              <Route 
+                path='/login' 
+                element={<Login />} 
+              />
+              <Route 
+                path='/signup' 
+                element={<Signup />} 
+              />
+              <Route 
+                path='/' 
+                element={<Landing/>}
+              />
+            </Routes>
+          </div>
        </Router>
        </>
     )
