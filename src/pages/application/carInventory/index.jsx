@@ -40,11 +40,10 @@ export default function CarInventory() {
     useEffect(()=>{
         getcardata();
     },[]);
-    return(
-      
+      return(
   <div>
-    <div class="card-columns">
-  <h1 class="card-title">select your car</h1>
+    <div className="card-columns">
+  <h1 className="card-title">select your car</h1>
   
      
        {car.map((item,idx)=>{
@@ -56,7 +55,7 @@ export default function CarInventory() {
               <Card.Text >₹ {item.price}</Card.Text>
               <Card.Text >{item.description}</Card.Text>
              
-             { !logged && (
+             { logged && (
                     <>
                     <Link to="/login" type="submit">
                     <Button  key= {item.id} variant="primary"
@@ -66,7 +65,7 @@ export default function CarInventory() {
                     </>
              )}
         
-            { logged && (
+            { !logged && (
                     <>
                     <Link to='/signup'>
                     <Button  key= {item.id} variant="primary"
@@ -76,7 +75,8 @@ export default function CarInventory() {
         
                     </>
             )}
-            &nbsp;&nbsp;
+            &nbsp;
+            &nbsp;
             <Link to="/" type="submit"><Button variant="secondary"> Cancel </Button>
             </Link>
             </Card.Body>
@@ -88,3 +88,76 @@ export default function CarInventory() {
   ); 
   };
 
+// class Cars extends React.Component{
+
+//   // const[car,setcar]=useState([]);
+//   constructor(props){
+//     super(props)
+//     this.state = {
+//       car:[],
+//     }
+// }
+
+// async componentDidMount(){
+  
+//       await axios.get("http://localhost:7050/api/carlist")
+//       .then(res =>{
+//         console.log(res)
+//         this.setState({car:res.data});
+//       })
+      
+//   }
+
+// render(){
+//   return(
+    
+
+// <div class="card-columns">
+//       <h1 class="card-title">select your car</h1>
+//      {this.state.car.map((item)=>{
+//         return( 
+//           <Card style={{ width: '25rem' }}>
+//           <Card.Img variant="top" src={item.image} />
+//           <Card.Body>
+//             <Card.Title key= {item.id} >{item.title}</Card.Title>
+//             <Card.Text >₹ {item.price}</Card.Text>
+//             <Card.Text >{item.description}</Card.Text>
+//             </Card.Body><Button  key= {item.id} variant="primary">Book</Button>
+
+//               { !logged && (
+//                      <>
+//                      <Link to="/login" type="submit">
+//                      <Button  key= {item.id} variant="primary"
+//                      onClick={() => bookingConfirm(idx)}
+//                      >Book</Button>
+//                      </Link>
+//                      </>
+//               )}
+        
+//              { logged && (
+//                      <>
+//                     <Link to='/signup'>
+//                      <Button  key= {item.id} variant="primary"
+//                      onClick={() => bookingConfirm(idx)}
+//                      >Book</Button>
+//                      </Link>
+        
+//                     </>
+//              )}
+//              &nbsp;
+//              &nbsp;
+//              <Link to="/" type="submit"><Button variant="secondary"> Cancel </Button>
+//             </Link>
+//           </Card.Body>
+//         )
+//              },
+//              )}
+//         </Card>
+//   </div>
+  
+//             };
+            
+//       }
+//              }
+//             }
+// export default Cars;

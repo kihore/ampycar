@@ -17,6 +17,7 @@ export default function Login() {
          alert(resp.data.message);
         if(resp.data.message==="Logged-In Successfully"){
           localStorage.setItem("userdetail",JSON.stringify(resp.data));
+          localStorage.setItem("logged",true)
       console.log("user account is detected",resp.data);
       document.getElementById("user_email").value="";
       document.getElementById("password").value="";

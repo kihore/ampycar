@@ -1,8 +1,13 @@
 import React from 'react'
 import axios from 'axios'
-import "./signup.css"
+import "./signup.css";
+import { useNavigate } from 'react-router-dom';
 
 export default function Signup() {
+  
+
+    let navigate=useNavigate();
+
     function handlechange(){
         const password = document.getElementById("password");
         const conformpassword = document.getElementById("confirmPassword");
@@ -18,10 +23,11 @@ export default function Signup() {
     })
     .then(resp=>{
         console.log(resp.data);
-       document.getElementsByName("name").value="";
+        document.getElementsByName("name").value="";
         document.getElementsByName("email").value="";
         document.getElementsByName("password").value="";
         document.getElementsByName("phoneNo").value="";
+        navigate('/summary')
 })
 .catch(function(err){
     console.log("error");

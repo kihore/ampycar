@@ -111,7 +111,7 @@ export default function Landing() {
                 required
                 name="fromLocation"
                 type="text"
-                placeholder="From Location"
+                placeholder="  From Location"
               ></input>
             </div>
             {showToLocation && (
@@ -123,7 +123,7 @@ export default function Landing() {
                   required
                   name="toLocation"
                   type="text"
-                  placeholder="To Location"
+                  placeholder="  To Location"
                 ></input>
               </div>
             )}
