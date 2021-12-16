@@ -5,6 +5,7 @@ import './dropdown.css';
 import { Link } from "react-router-dom";
 
 import { useNavigate } from 'react-router-dom';
+import localStorage from "redux-persist/es/storage";
 
 const API_URL = 'http://localhost:5001';
 
@@ -47,6 +48,7 @@ export default function Landing() {
         })
         
         .then(resp=>{console.log(resp.data)
+          localStorage.setItem("trip-detail",JSON.stringify(resp.data))
           document.getElementById("floc").value="";
           document.getElementById("dte").value="";
           console.log("got REsponse");
@@ -67,6 +69,7 @@ export default function Landing() {
   
             })
             .then(resp=>{console.log(resp.data)
+              localStorage.setItem("trip-detail",JSON.stringify(resp.data))
               document.getElementById("floc").value="";
               document.getElementById("tloc").value="";
               document.getElementById("dte").value="";

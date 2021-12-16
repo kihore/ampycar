@@ -24,15 +24,18 @@ export default function CarInventory() {
       const data = await axios.get("http://localhost:5001/api/carlist");
   
         setcar(data.data);
+        console.log("json items")
         console.log(data.data)
+
         }catch(e){
             console.log(e);
         }
     };
   
-    const bookingConfirm = async(id) =>{
-         export default id;
-    }
+    const bookingConfirm = (id) =>{
+      localStorage.setItem("bookedCar",JSON.stringify(car[id]))
+     
+  } 
   
     useEffect(()=>{
         getcardata();
@@ -44,7 +47,7 @@ export default function CarInventory() {
   <h1 class="card-title">select your car</h1>
   
      
-       {car.map((item)=>{
+       {car.map((item,idx)=>{
           return(   
             <Card style={{ width: '25rem' }}>
             <Card.Img variant="top" src={item.image} />
@@ -56,7 +59,9 @@ export default function CarInventory() {
              { !logged && (
                     <>
                     <Link to="/login" type="submit">
-                    <Button  key= {item.id} variant="primary">Book</Button>
+                    <Button  key= {item.id} variant="primary"
+                    onClick={() => bookingConfirm(idx)}
+                    >Book</Button>
                     </Link>
                     </>
              )}
@@ -65,7 +70,7 @@ export default function CarInventory() {
                     <>
                     <Link to='/signup'>
                     <Button  key= {item.id} variant="primary"
-                    //  onClick={bookingConfirm(item.id)}
+                     onClick={() => bookingConfirm(idx)}
                     >Book</Button>
                     </Link>
         
@@ -82,3 +87,4 @@ export default function CarInventory() {
         </div>
   ); 
   };
+
