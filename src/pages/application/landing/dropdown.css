@@ -7,7 +7,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    padding: 60px 100px; 
+    padding: 74px 100px; 
   
   }
   
@@ -21,7 +21,7 @@
   }
   .container form {
     width: 400px;
-    height: 600px;
+    height: 700px;
     /* border: 2px solid rgba(209,132,129,255)  ; */
     border-radius: 20px;
     display: flex;

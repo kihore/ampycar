@@ -72,7 +72,7 @@ export default function Signup() {
                      />
                 </div>
                 <div>
-                    <label>Conform Password</label>
+                    <label>Confirm Password</label>
                     <input type= 'password' id="confirmPassword" name= 'confirmPassword' placeholder= 'Enter Confirm Password' 
                     required
                      />

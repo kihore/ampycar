@@ -91,9 +91,9 @@ import React from 'react';
       {/* <Link to="/"><Button>Home</Button></Link> */}
       { !logg && (
         <>
-         <Link to="/"><Button>Home</Button></Link>
-      <Link to="/login"><Button>Login</Button></Link>
-      <Link to="/signup"><Button>SignUp</Button></Link>
+         <Link to="/"><Button className='nav_btn'>Home</Button></Link>
+      <Link to="/login"><Button className='nav_btn'>Login</Button></Link>
+      <Link to="/signup"><Button className='nav_btn'>SignUp</Button></Link>
 
       </>
       )}

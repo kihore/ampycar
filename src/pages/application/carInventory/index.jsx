@@ -3,6 +3,7 @@ import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Button, Card} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import  './car.css';
 
 export default function CarInventory() {
     
@@ -49,7 +50,7 @@ export default function CarInventory() {
        {car.map((item,idx)=>{
           return(   
             <Card style={{ width: '25rem' }}>
-            <Card.Img variant="top" src={item.image} />
+            <Card.Img variant="bottom" src={item.image} />
             <Card.Body>
               <Card.Title key= {item.id} >{item.title}</Card.Title>
               <Card.Text >₹ {item.price}</Card.Text>

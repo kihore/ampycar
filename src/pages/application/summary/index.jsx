@@ -69,7 +69,7 @@ export default function BookingSummary() {
              </div>
              <div className='price_chart'>
                  <p className='price'>
-                     {tripSummary.price}
+                 ₹ {tripSummary.price}
                  </p>
                  <button className='checkout_btn' onClick={successpage}>Checkout SUmmary</button>
              </div>
