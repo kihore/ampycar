@@ -7,8 +7,10 @@ export default function Signup() {
   
 
     let navigate=useNavigate();
-
-    function handlechange(){
+    let trip=localStorage.getItem('trip');
+    trip==='true'?trip=true:trip=false;
+    function handlechange(e){
+        e.preventDefault()
         const password = document.getElementById("password");
         const conformpassword = document.getElementById("confirmPassword");
         //const email =document.getElementById("email");
@@ -20,6 +22,7 @@ export default function Signup() {
         email:document.getElementById("email").value,
         password:document.getElementById("password").value,
         phoneNo:document.getElementById("phoneNo").value
+    
     })
     .then(resp=>{
         console.log(resp.data);
@@ -27,8 +30,29 @@ export default function Signup() {
         document.getElementsByName("email").value="";
         document.getElementsByName("password").value="";
         document.getElementsByName("phoneNo").value="";
-        navigate('/summary')
-})
+        if(trip ===true){
+            navigate('/summary');
+            }else{
+              navigate('/');
+            }
+        })
+// .then(resp => {
+//     alert(resp.data.message);
+//     if (resp.data.message === "signed-up Successfully") {
+//         localStorage.setItem("userdetail", JSON.stringify(resp.data));
+//         localStorage.setItem("logged", true)
+//         console.log("working")
+//         document.getElementsById("name").value="";
+//         document.getElementsById("email").value="";
+//         document.getElementsById("password").value="";
+//         document.getElementsById("phoneNo").value="";
+//         document.getElementById("user_email").value = "";
+//         document.getElementById("password").value = "";
+//         navigate('/summary');
+
+//     }
+//     })
+
 .catch(function(err){
     console.log("error");
 })
@@ -67,7 +91,7 @@ export default function Signup() {
                 <div>
                     <label>Password</label>
                     <input type= 'password' id="password" name= 'password' placeholder= 'Enter Password' 
-                    required 
+                    required message="one caps letter followed by 6 small letters and 2 numbers"
                     pattern="[A-Z]{1}[a-z]{6}[0-9]{2}"
                      />
                 </div>
@@ -78,6 +102,7 @@ export default function Signup() {
                      />
                 </div>
                 </div>
+
                 <button type="submit">Sign Up</button>
             </form>
         </div>

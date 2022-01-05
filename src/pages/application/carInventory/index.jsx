@@ -78,7 +78,7 @@ export default function CarInventory() {
             )}
             &nbsp;
             &nbsp;
-            <Link to="/" type="submit"><Button variant="secondary"> Cancel </Button>
+            <Link to="/" type="submit"><Button variant="secondary">Exit </Button>
             </Link>
             </Card.Body>
           </Card>

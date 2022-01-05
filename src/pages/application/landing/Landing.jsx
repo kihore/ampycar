@@ -48,6 +48,8 @@ export default function Landing() {
         })
         
         .then(resp=>{console.log(resp.data)
+          alert(resp.data.message);
+          localStorage.setItem('trip',true);
           localStorage.setItem("trip-detail",JSON.stringify(resp.data))
           document.getElementById("floc").value="";
           document.getElementById("dte").value="";
@@ -69,6 +71,7 @@ export default function Landing() {
   
             })
             .then(resp=>{console.log(resp.data)
+              localStorage.setItem('trip',true);
               localStorage.setItem("trip-detail",JSON.stringify(resp.data))
               document.getElementById("floc").value="";
               document.getElementById("tloc").value="";

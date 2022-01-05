@@ -71,7 +71,7 @@ export default function BookingSummary() {
                  <p className='price'>
                  ₹ {tripSummary.price}
                  </p>
-                 <button className='checkout_btn' onClick={successpage}>Checkout SUmmary</button>
+                 <button className='checkout_btn' onClick={successpage}>Checkout Summary</button>
              </div>
             </div>
         </div></div>
